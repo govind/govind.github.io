@@ -1,88 +1,469 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
-        <link rel="stylesheet" href="css/normalize.min.css">
-        <link rel="stylesheet" href="css/main.css">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+	<title>gworks - Take a ride</title>
+	<meta name="author" content="Govindaraj" />
+	<meta name="description" content="portfolio webpage." />
+	<meta name="keywords"  content="portfolio,govindaraj,jobs,profile,CV,Download CV,contact, linkedin" />
+	<meta name="Resource-type" content="Document" />
+	<meta http-equiv="cleartype" content="on" />
+	<meta name="MobileOptimized" content="width" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="HandheldFriendly" content="true" />
+	
+	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
 
-        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+		<script src="jscript/modernizr.custom.70736.js"></script>
+<script src="jscript/jquery-1.10.2.js"></script>
+<script src="jscript/jquery.history.js"></script>	
+<script src="jscript/jquery-ui-1.10.4.custom.js"></script>	
+<script type="text/javascript" src="jscript/slimscroll.js"></script>
+    <script type="text/javascript" src="jscript/jquery.fullPage.js"></script>
+	<script type="text/javascript" src="examples.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var pepe = $.fn.fullpage({
+				anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+				menu: '#menu',
+				scrollingSpeed: 700,
+				scrollOverflow:false,
+				'afterLoad': function(anchorLink, index){
+					if(index == 2){
+						$('#section1').addClass('expexp');
 
-        <div class="header-container">
-            <header class="wrapper clearfix">
-                <h1 class="title">h1.title</h1>
-                <nav>
-                    <ul>
-                        <li><a href="#">nav ul li a</a></li>
-                        <li><a href="about.html">nav ul li a</a></li>
-                        <li><a href="#">nav ul li a</a></li>
-                    </ul>
-                </nav>
-            </header>
-        </div>
+							setTimeout(function(){$(".skill").addClass("text").removeClass('disable');}, 1000);
+							setTimeout(function(){$("#section1").find('section, h1, p').removeClass('disable');}, 500);
 
-        <div class="main-container">
-            <div class="main wrapper clearfix">
+						$('.progressbar').each(function(){
+								var t = $(this),
+									dataperc = t.attr('data-perc'),
+									barperc = Math.round(dataperc*3.95);
+								t.find('.bar').animate({width:barperc}, dataperc*25);
+								t.find('.label').html('<div class="perc"></div>');
+								
+								function perc() {
+									var length = t.find('.bar').css('width'),
+										perc = Math.round(parseInt(length)/3.95),
+										labelpos = (parseInt(length)-2);
+									t.find('.label').css('left', labelpos);
+									t.find('.perc').text(perc+'%');
+								}
+								perc();
+								setInterval(perc, 0); 
+						});
+						return false;
+						
+					}
+				
+					if(index == 5){
+						$('.smedia').addClass('displayhide');
+					}
+					
+				},
 
-                <article>
-                    <header>
-                        <h1>article header h1</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec.</p>
-                    </header>
-                    <section>
-                        <h2>article section h2</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra.</p>
-                    </section>
-                    <section>
-                        <h2>article section h2</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra.</p>
-                    </section>
-                    <footer>
-                        <h3>article footer h3</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor.</p>
-                    </footer>
-                </article>
+				'onLeave': function(index, direction){
+					if(index == 5){
+						$('.smedia').removeClass('displayhide');
+					}
+				},
 
-                <aside>
-                    <h3>aside</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices.</p>
-                </aside>
+			});
+			
+		});
+		
+		$(function() {
+		
+		//$('#test').one('click', function(){
+	
+	//});
 
-            </div> <!-- #main -->
-        </div> <!-- #main-container -->
+	
+});
+	</script>
+<style type="text/css">
+.circle_border{background-color:#fff;border-radius:50%;border:10px solid #B8B8B8;width:200px;height:200px;-moz-border-radius:50%;overflow:hidden;}
+.center_div{
+	width: 220px;
+    height: 250px;
+    top:0;
+    bottom: 0;
+    padding:25px 0px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+}
+</style>
+</head>
+<body>
+ 
+<ul id="menu">
+	<li data-menuanchor="firstPage"><a href="#firstPage">About</a></li>
+	<li data-menuanchor="secondPage"><a href="#secondPage">Skills</a></li>
+	<li data-menuanchor="3rdPage" id="thirdpage"><a href="#3rdPage">Portfolio</a></li>
+	<li data-menuanchor="4thpage"><a href="#4thpage">Clients</a></li>
+	<li data-menuanchor="lastPage"><a href="#lastPage">Get in Touch</a></li>
+</ul>
+<div class="smedia">
+	<header class="sm"><a href=""><img src="images/share.png" alt="share"></a></header>
+	<section class="smc">
+<ul class="socialmedia">
+                            <li><a class="socialicon linkedin" href="http://in.linkedin.com/in/govindarajk" target="_blank" title="ka.govindaraj@gmail.com"></a></li>
+                            <li><a class="socialicon facebook" href="https://www.facebook.com/ka.govindaraj" target="_blank"></a></li>
+                            <li><a class="socialicon twitter" href="https://twitter.com/kagovindaraj" target="_blank"></a></li>
+                            <li><a class="socialicon pintest" href="https://www.pinterest.com/kagovindaraj/" target="_blank"></a></li>
+                            <li ><a class="socialicon mail" href="mailto:ka.govindaraj@gmail.com" target="_blank"></a></li>
+                            </ul>
+	</section>
+</div>
 
-        <div class="footer-container">
-            <footer class="wrapper">
-                <h3>footer</h3>
-            </footer>
-        </div>
+<div class="section" id="section0">
+	<h1 >UI/UX Developer</h1>
+    
+    	<p class="bigtext">Over 7+ yrs of professional experience in the area of web/mobile/application design interface and distributed architecture using microsoft technologies, abobe suite and java plateform. Currently i am working as Senior UI Designer and has a extensive working knowledge in HTML5, CSS3, Jquery, Jquery UI, Jquery Mobile UI, Bootstrap, Responsive Design. Involved in different phases of interface design Viz. analysis, designing, coding and testing interface dev.</p>
+						
+                            <div class="center_div"><div class='downanimation'></div></div>
+    	<section class="animation">
+    	<div class="plane"></div>
+    	<div class="sun"><div class="main_img"><span>gworks</span></div></div>
+   		<div class="clouds_animation"></div>
+   		<div class="clouds_animation_2"></div>
+   		<div class="clouds_animation_3"></div>
+   		<div class="clouds_animation_4"></div>
+   		<div class="clouds_animation_5"></div>
+   		<div class="theme_bg"></div>
+   	</section>
+</div>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
 
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+<div class="section" id="section1">
+	<div class="expskill">
+	<h1 class="disable">Experience & Expertise</h1>
+	<h1 class="hidden"><span class="exp_txt">Experience</span> <span class="tise_text">Expertise</span></h1>
+   <section class="exp_stick disable">
+   		<div class="centerline"></div>
+   		<div class="exp">
+   			<ul class="exp_detail">
+   				<li class="exp_1">
+   					<span class="line"></span>
+   					<section class="company ">Caresoft <span class="hideshow">Global Pvt Ltd</span>
+   						<div class="hideshow">Multimedia Animator</div></section>
+   				</li>
+   				<li class="exp_2">
+   					<span class="line"></span>
+   					<section class="company">Minthomes <span class="hideshow">Pvt Ltd</span>
+   						<div class="hideshow">Web Designer</div></section>
+   				</li>
+   				<li class="exp_3">
+   					<span class="line"></span>
+   					<section class="company">element8 <span class="hideshow">Transformation</span>
+   						<div class="hideshow">Senior Designer</div></section>
+   				</li>
+   				<li class="exp_4">
+   					<span class="line"></span>
+   					<section class="company">Capgemini <span class="hideshow">India</span>
+   						<div class="hideshow">Consultant - UI</div></section>
+   				</li>
+   				<li class="exp_5">
+   					<span class="line"></span>
+   					<section class="company">Causeway <span class="hideshow">Software Technologies</span>
+   						<div class="hideshow">Senior UI Designer</div>
+   					</section>
+   				</li>
+   			</ul>
+   		</div>
+   </section>
+   
+   <section class="skillset" id="progress">
+   	<p class="bigtext disable">I love to work in creative animation that makes a huge difference in modern browser using HTML5/CSS3.</p>
+		
+    <div class="progressbar" data-perc="100">
+    	<span class="skill disable">HTML5</span>
+	<div class="bar"><span></span></div>
+	<div class="label"><span></span></div>
+</div>
+<div class="progressbar" data-perc="90">
+	<span class="skill disable">CSS3</span>
+	<div class="bar color2"><span></span></div>
+	<div class="label"><span></span></div>
+</div>
+<div class="progressbar" data-perc="100">
+	<span class="skill disable">Responsive web</span>
+	<div class="bar color4"><span></span></div>
+	<div class="label"><span></span></div>
+</div>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
-    </body>
+<div class="progressbar" data-perc="80">
+	<span class="skill disable">Jquery</span>
+	<div class="bar color3"><span></span></div>
+	<div class="label"><span></span></div>
+</div>
+<div class="progressbar" data-perc="70">
+	<span class="skill disable">Javascript</span>
+	<div class="bar color4"><span></span></div>
+	<div class="label"><span></span></div>
+</div>
+<div class="progressbar" data-perc="65">
+	<span class="skill disable">AngularJs</span>
+	<div class="bar color4"><span></span></div>
+	<div class="label"><span></span></div>
+</div>
+<div class="progressbar" data-perc="90">
+	<span class="skill disable">Design</span>
+	<div class="bar color4"><span></span></div>
+	<div class="label"><span></span></div>
+</div>
+
+   </section>
+
+<section class="downloadcv disable"><a href="css/CV.docx">Download CV</a></section>
+</div>
+
+<!-- Mobile customization -->
+<div class="mobile">
+	<h1>To know more about my Experience & expertise have a look in my CV.</h1>
+	<section class="downloadcv disable"><a href="css/CV.docx">Download CV</a></section>
+</div>
+</div>
+
+
+<div class="section" id="section2">
+	<h1>Portfolio</h1>
+	<div class="gamma-container gamma-loading" id="gamma-container">
+
+					<ul class="gamma-gallery">
+
+						
+						
+						<li>
+							<div data-alt="Pastry Factory" data-description="<h3>Pastry Factory</h3>" data-max-width="1800" data-max-height="1350">
+								<div data-src="images/img_large/pastry_big.jpg" data-min-width="1300"></div>
+								<div data-src="images/img_large/pastry_big.jpg" data-min-width="1000"></div>
+								<div data-src="images/img_large/pastry_big.jpg" data-min-width="700"></div>
+								<div data-src="images/img_large/pastry_big.jpg" data-min-width="300"></div>
+								<div data-src="images/img_large/pastry_big.jpg" data-min-width="200"></div>
+								<div data-src="images/img_large/pastry_big.jpg" data-min-width="140"></div>
+								<div data-src="images/img_large/pastry_big.jpg"></div>
+								<noscript>
+									<img src="images/img_large/pastry_big.jpg" alt="img03"/>
+								</noscript>
+							</div>
+						</li>
+						<li>
+							<div data-alt="justQuote" data-description="<h3>Juzquote</h3>" data-max-width="1800" data-max-height="1350">
+								<div data-src="images/img_large/justquote_big.jpg" data-min-width="1300"></div>
+								<div data-src="images/img_large/justquote_big.jpg" data-min-width="1000"></div>
+								<div data-src="images/img_large/justquote_big.jpg" data-min-width="700"></div>
+								<div data-src="images/img_large/justquote_big.jpg" data-min-width="300"></div>
+								<div data-src="images/img_large/justquote_big.jpg" data-min-width="200"></div>
+								<div data-src="images/img_large/justquote_big.jpg" data-min-width="140"></div>
+								<div data-src="images/img_large/justquote_big.jpg"></div>
+								<noscript>
+									<img src="images/justquote.jpg" alt="img03"/>
+								</noscript>
+							</div>
+						</li>
+						<li>
+							<div data-alt="GCI" data-description="<h3>GCI</h3>" data-max-width="1800" data-max-height="1350">
+								<div data-src="images/img_large/gci_big.jpg" data-min-width="1300"></div>
+								<div data-src="images/img_large/gci_big.jpg" data-min-width="1000"></div>
+								<div data-src="images/img_large/gci_big.jpg" data-min-width="700"></div>
+								<div data-src="images/img_large/gci_big.jpg" data-min-width="300"></div>
+								<div data-src="images/img_large/gci_big.jpg" data-min-width="200"></div>
+								<div data-src="images/img_large/gci_big.jpg" data-min-width="140"></div>
+								<div data-src="images/img_large/gci_big.jpg"></div>
+								<noscript>
+									<img src="images/img_large/gci_big.jpg" alt="img03"/>
+								</noscript>
+							</div>
+						</li>
+						<li>
+							<div data-alt="element8" data-description="<h3>element8</h3>" data-max-width="1800" data-max-height="1350">
+								<div data-src="images/img_large/element8_big.jpg" data-min-width="1300"></div>
+								<div data-src="images/img_large/element8_big.jpg" data-min-width="1000"></div>
+								<div data-src="images/img_large/element8_big.jpg" data-min-width="700"></div>
+								<div data-src="images/img_large/element8_big.jpg" data-min-width="300"></div>
+								<div data-src="images/img_large/element8_big.jpg" data-min-width="200"></div>
+								<div data-src="images/img_large/element8_big.jpg" data-min-width="140"></div>
+								<div data-src="images/img_large/element8_big.jpg"></div>
+								<noscript>
+									<img src="images/img_large/element8_big.jpg" alt="img03"/>
+								</noscript>
+							</div>
+						</li>
+						<li>
+							<div data-alt="honeywell" data-description="<h3>Honeywell-Aclar</h3>" data-max-width="1800" data-max-height="1350">
+								<div data-src="images/img_large/honey_big.jpg" data-min-width="1300"></div>
+								<div data-src="images/img_large/honey_big.jpg" data-min-width="1000"></div>
+								<div data-src="images/img_large/honey_big.jpg" data-min-width="700"></div>
+								<div data-src="images/img_large/honey_big.jpg" data-min-width="300"></div>
+								<div data-src="images/img_large/honey_big.jpg" data-min-width="200"></div>
+								<div data-src="images/img_large/honey_big.jpg" data-min-width="140"></div>
+								<div data-src="images/img_large/honey_big.jpg"></div>
+								<noscript>
+									<img src="images/img_large/honey_big.jpg" alt="img03"/>
+								</noscript>
+							</div>
+						</li>
+						<li>
+							<div data-alt="3rdi" data-description="<h3>3rdi innovation</h3>" data-max-width="1800" data-max-height="1350">
+								<div data-src="images/img_large/work8_big.jpg" data-min-width="1300"></div>
+								<div data-src="images/img_large/work8_big.jpg" data-min-width="1000"></div>
+								<div data-src="images/img_large/work8_big.jpg" data-min-width="700"></div>
+								<div data-src="images/img_large/work8_big.jpg" data-min-width="300"></div>
+								<div data-src="images/img_large/work8_big.jpg" data-min-width="200"></div>
+								<div data-src="images/img_large/work8_big.jpg" data-min-width="140"></div>
+								<div data-src="images/img_large/work8_big.jpg"></div>
+								<noscript>
+									<img src="images/img_large/work8_big.jpg" alt="img03"/>
+								</noscript>
+							</div>
+						</li>
+						<li>
+							<div data-alt="minthomes" data-description="<h3>Mint-direction</h3>" data-max-width="1800" data-max-height="1350">
+								<div data-src="images/img_large/work9_big.jpg" data-min-width="1300"></div>
+								<div data-src="images/img_large/work9_big.jpg" data-min-width="1000"></div>
+								<div data-src="images/img_large/work9_big.jpg" data-min-width="700"></div>
+								<div data-src="images/img_large/work9_big.jpg" data-min-width="300"></div>
+								<div data-src="images/img_large/work9_big.jpg" data-min-width="200"></div>
+								<div data-src="images/img_large/work9_big.jpg" data-min-width="140"></div>
+								<div data-src="images/img_large/work9_big.jpg"></div>
+								<noscript>
+									<img src="images/img_large/work9_big.jpg" alt="img03"/>
+								</noscript>
+							</div>
+						</li>
+						<li>
+							<div data-alt="Minthomes-CEO" data-description="<h3>Minthomes-CEO</h3>" data-max-width="1800" data-max-height="1350">
+								<div data-src="images/img_large/work4_big.jpg" data-min-width="1300"></div>
+								<div data-src="images/img_large/work4_big.jpg" data-min-width="1000"></div>
+								<div data-src="images/img_large/work4_big.jpg" data-min-width="700"></div>
+								<div data-src="images/img_large/work4_big.jpg" data-min-width="300"></div>
+								<div data-src="images/img_large/work4_big.jpg" data-min-width="200"></div>
+								<div data-src="images/img_large/work4_big.jpg" data-min-width="140"></div>
+								<div data-src="images/img_large/work4_big.jpg"></div>
+								<noscript>
+									<img src="images/img_large/work4_big.jpg" alt="img03"/>
+								</noscript>
+							</div>
+						</li>
+					</ul>
+					<div class="gamma-overlay"></div>
+
+					<!--<div id="loadmore" class="loadmore">Example for loading more items...</div>-->
+	</div>
+</div>
+
+<div class="section" id="section3">
+		<section class="logo_align">
+	<h3>Company</h3>
+	<ul class="company_logo">
+		<li><img src="images/caresoft.jpg"</li>
+		<li><img src="images/minthome.jpg"</li>
+		<li><img src="images/element8.jpg"</li>
+		<li><img src="images/capgemini.jpg"</li>
+		<li><img src="images/causeway.jpg"</li>
+	</ul>
+
+	<h3 style="padding-top:15px">Worked for Major Clients via Company</h3>
+	<ul class="client_logo">
+		<li><img src="images/gci.jpg"</li>
+		<li><img src="images/coke.jpg"</li>
+		<li><img src="images/novo_nordisk.jpg"</li>
+		<li><img src="images/honeywell.jpg"</li>
+	</ul>
+	
+	</section>
+</div>
+
+
+<div class="section" id="section4">
+	<div class="contact">
+	<section>If you are really impressed in my work, I would like to hear from you :)</section>
+	<section>mail me :<span> ka.govindaraj@gmail.com</span></section>
+	<section>Talk to me :<span> +91-9620962111</span></section>
+	<div class="thanks">
+			<span>Thank you</span>
+			</div>
+	</div>
+	<ul class="positioning socialmedia">
+                            <li><a class="socialicon linkedin" href="http://in.linkedin.com/in/govindarajk" target="_blank" title="ka.govindaraj@gmail.com"></a></li>
+                            <li><a class="socialicon facebook" href="https://www.facebook.com/ka.govindaraj" target="_blank"></a></li>
+                            <li><a class="socialicon twitter" href="https://twitter.com/kagovindaraj" target="_blank"></a></li>
+                            <li><a class="socialicon pintest" target="_blank" href="https://www.pinterest.com/kagovindaraj/"></a></li>
+                            <li ><a class="socialicon mail" href="mailto:ka.govindaraj@gmail.com" target="_blank"></a></li>
+                            </ul>
+</div>
+
+<script src="jscript/jquery.masonry.min.js"></script>
+		<!--<script src="jscript/jquery.history.js"></script>-->
+		<script src="jscript/js-url.min.js"></script>
+		<script src="jscript/jquerypp.custom.js"></script>
+		<script src="jscript/gamma.js"></script>
+		<script type="text/javascript">
+			
+			$(function() {
+
+				var GammaSettings = {
+						// order is important!
+						viewport : [ {
+							width : 1200,
+							columns : 5
+						}, {
+							width : 900,
+							columns : 4
+						}, {
+							width : 500,
+							columns : 3
+						}, { 
+							width : 320,
+							columns : 2
+						}, { 
+							width : 0,
+							columns : 2
+						} ]
+				};
+
+				Gamma.init( GammaSettings, fncallback );
+
+
+				// Example how to add more items (just a dummy):
+
+				var page = 0,
+					items = ['<li><div data-alt="img03" data-description="<h3>Sky high</h3>" data-max-width="1800" data-max-height="1350"><div data-src="images/xxxlarge/3.jpg" data-min-width="1300"></div><div data-src="images/xxlarge/3.jpg" data-min-width="1000"></div><div data-src="images/xlarge/3.jpg" data-min-width="700"></div><div data-src="images/large/3.jpg" data-min-width="300"></div><div data-src="images/medium/3.jpg" data-min-width="200"></div><div data-src="images/small/3.jpg" data-min-width="140"></div><div data-src="images/xsmall/3.jpg"></div><noscript><img src="images/xsmall/3.jpg" alt="img03"/></noscript></div></li><li><div data-alt="img03" data-description="<h3>Sky high</h3>" data-max-width="1800" data-max-height="1350"><div data-src="images/xxxlarge/3.jpg" data-min-width="1300"></div><div data-src="images/xxlarge/3.jpg" data-min-width="1000"></div><div data-src="images/xlarge/3.jpg" data-min-width="700"></div><div data-src="images/large/3.jpg" data-min-width="300"></div><div data-src="images/medium/3.jpg" data-min-width="200"></div><div data-src="images/small/3.jpg" data-min-width="140"></div><div data-src="images/xsmall/3.jpg"></div><noscript><img src="images/xsmall/3.jpg" alt="img03"/></noscript></div></li><li><div data-alt="img03" data-description="<h3>Sky high</h3>" data-max-width="1800" data-max-height="1350"><div data-src="images/xxxlarge/3.jpg" data-min-width="1300"></div><div data-src="images/xxlarge/3.jpg" data-min-width="1000"></div><div data-src="images/xlarge/3.jpg" data-min-width="700"></div><div data-src="images/large/3.jpg" data-min-width="300"></div><div data-src="images/medium/3.jpg" data-min-width="200"></div><div data-src="images/small/3.jpg" data-min-width="140"></div><div data-src="images/xsmall/3.jpg"></div><noscript><img src="images/xsmall/3.jpg" alt="img03"/></noscript></div></li><li><div data-alt="img03" data-description="<h3>Sky high</h3>" data-max-width="1800" data-max-height="1350"><div data-src="images/xxxlarge/3.jpg" data-min-width="1300"></div><div data-src="images/xxlarge/3.jpg" data-min-width="1000"></div><div data-src="images/xlarge/3.jpg" data-min-width="700"></div><div data-src="images/large/3.jpg" data-min-width="300"></div><div data-src="images/medium/3.jpg" data-min-width="200"></div><div data-src="images/small/3.jpg" data-min-width="140"></div><div data-src="images/xsmall/3.jpg"></div><noscript><img src="images/xsmall/3.jpg" alt="img03"/></noscript></div></li><li><div data-alt="img03" data-description="<h3>Sky high</h3>" data-max-width="1800" data-max-height="1350"><div data-src="images/xxxlarge/3.jpg" data-min-width="1300"></div><div data-src="images/xxlarge/3.jpg" data-min-width="1000"></div><div data-src="images/xlarge/3.jpg" data-min-width="700"></div><div data-src="images/large/3.jpg" data-min-width="300"></div><div data-src="images/medium/3.jpg" data-min-width="200"></div><div data-src="images/small/3.jpg" data-min-width="140"></div><div data-src="images/xsmall/3.jpg"></div><noscript><img src="images/xsmall/3.jpg" alt="img03"/></noscript></div></li>']
+
+				function fncallback() {
+
+					$( '#loadmore' ).show().on( 'click', function() {
+
+						++page;
+						var newitems = items[page-1]
+						if( page <= 1 ) {
+							
+							Gamma.add( $( newitems ) );
+
+						}
+						if( page === 1 ) {
+
+							$( this ).remove();
+
+						}
+
+					} );
+
+				}
+
+			});
+</script>
+</body>
 </html>
