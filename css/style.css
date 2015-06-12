@@ -1638,53 +1638,53 @@ bottom:342px;
 @-webkit-keyframes exp4{
 0%{bottom:0;opacity:0;}
 16%,36%,56%{bottom:0px;opacity:0;}
-76%{bottom:418px;opacity:0.99;}
+76%{bottom:380px;opacity:0.99;}
 }
 @-moz-keyframes exp4{
 0%{bottom:0;opacity:0;}
 16%,36%,56%{bottom:0px;opacity:0;}
-76%{bottom:418px;opacity:0.99;}
+76%{bottom:380px;opacity:0.99;}
 }
 @-ms-keyframes exp4{
 0%{bottom:0;opacity:0;}
 16%,36%,56%{bottom:0px;opacity:0;}
-76%{bottom:418px;opacity:0.99;}
+76%{bottom:380px;opacity:0.99;}
 }
 @-0-keyframes exp4{
 0%{bottom:0;opacity:0;}
 16%,36%,56%{bottom:0px;opacity:0;}
-76%{bottom:418px;opacity:0.99;}
+76%{bottom:380px;opacity:0.99;}
 }
 @keyframes exp4{
 0%{bottom:0;opacity:0;}
 16%,36%,56%{bottom:0px;opacity:0;}
-76%{bottom:418px;opacity:0.99;}
+76%{bottom:380px;opacity:0.99;}
 }
 
 @keyframes exp5{
 0%{bottom:0;opacity:0;}
 16%,36%,56%,76%{bottom:0px;opacity:0;}
-96%{bottom:564px;opacity:0.99;}
+96%{bottom:400px;opacity:0.99;}
 }
 @-webkit-keyframes exp5{
 0%{bottom:0;opacity:0;}
 16%,36%,56%,76%{bottom:0px;opacity:0;}
-96%{bottom:564px;opacity:0.99;}
+96%{bottom:400px;opacity:0.99;}
 }
 @-moz-keyframes exp5{
 0%{bottom:0;opacity:0;}
 16%,36%,56%,76%{bottom:0px;opacity:0;}
-96%{bottom:564px;opacity:0.99;}
+96%{bottom:400px;opacity:0.99;}
 }
 @-ms-keyframes exp5{
 0%{bottom:0;opacity:0;}
 16%,36%,56%,76%{bottom:0px;opacity:0;}
-96%{bottom:564px;opacity:0.99;}
+96%{bottom:400px;opacity:0.99;}
 }
 @-o-keyframes exp5{
 0%{bottom:0;opacity:0;}
 16%,36%,56%,76%{bottom:0px;opacity:0;}
-96%{bottom:564px;opacity:0.99;}
+96%{bottom:400px;opacity:0.99;}
 }
 .expexp .exp_1 .company{
 background-color:#CEB73F;
