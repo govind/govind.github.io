@@ -3258,4 +3258,8 @@ bottom: 4%;
 	#section0 h1, #section0 h4{
 		top: -120px!important;
 	}
+
+	.positioning.socialmedia{
+		bottom: 40%!important;
+	}
 }
