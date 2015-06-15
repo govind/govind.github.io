@@ -3254,4 +3254,8 @@ bottom: 4%;
 
 
 
-
+@media screen and (min-width: 1400px) {
+	#section0 h1, #section0 h4{
+		top: -120px!important;
+	}
+}
